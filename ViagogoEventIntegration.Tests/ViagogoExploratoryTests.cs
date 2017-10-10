@@ -1,13 +1,10 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using GogoKit;
-using GogoKit.Services;
 using ViagogoEventIntegration.Infrastruture;
 
 namespace ViagogoEventIntegration.Tests
@@ -25,7 +22,7 @@ namespace ViagogoEventIntegration.Tests
         [Test]
         public async Task ShouldReceiveResultsFromViagogoApi()
         {
-            var credentialProvider = new CredentialProvider(); ;
+            var credentialProvider = new CredentialProvider();
 
             //Given
             var sut = new ViagogoClient(new ProductHeaderValue(AppName), credentialProvider.ClientId, credentialProvider.ClientSecret);
