@@ -1,0 +1,51 @@
+﻿.event-date {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
+.event-venue-name {
+    margin-bottom: 15px;
+    font-size: 23px;
+    font-weight: 200;
+}
+.event-min-price-label {
+    position: absolute;
+    right: 20px;
+    top: 64px;
+}
+
+.event-view-more {
+    color: #ddd;
+    position: relative;
+    left: 50%;
+    font-size: 1.5em;
+    transition: all 0.5s ease;
+}
+
+.event-view-more:hover {
+    top: 6px;
+    color: #999;
+}
+.form-group {
+    margin-top: 90px;
+}
+
+.event-main-image {
+    margin: 20px;
+}
+
+.event-tickets-listing {
+    margin-top: 20px;
+}
+.listing-ticket-icon {
+    position: absolute;
+    top: 34%;
+    right: 2%;
+    font-size: 30px;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+.event-copy-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

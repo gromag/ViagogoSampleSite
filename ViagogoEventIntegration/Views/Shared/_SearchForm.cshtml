@@ -1,0 +1,10 @@
+﻿@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-search"></span>
+        <input type="text" class="form-control" placeholder="e.g. Stereophonics" name="searchTerms" />
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Search Artist</button>
+        </span>
+    </div>
+}

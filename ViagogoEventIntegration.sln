@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagogoEventIntegration.Tests", "ViagogoEventIntegration.Tests\ViagogoEventIntegration.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagogoEventIntegration", "ViagogoEventIntegration\ViagogoEventIntegration.csproj", "{9F74D206-2832-47C5-8554-30E4301B8E6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagogoEventIntegration.Abstractions", "ViagogoEventIntegration.Abstractions\ViagogoEventIntegration.Abstractions.csproj", "{798F5569-F18F-4317-907B-462E33DB375A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F74D206-2832-47C5-8554-30E4301B8E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F74D206-2832-47C5-8554-30E4301B8E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F74D206-2832-47C5-8554-30E4301B8E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F74D206-2832-47C5-8554-30E4301B8E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798F5569-F18F-4317-907B-462E33DB375A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798F5569-F18F-4317-907B-462E33DB375A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798F5569-F18F-4317-907B-462E33DB375A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798F5569-F18F-4317-907B-462E33DB375A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF37FEA4-995D-40F1-B1E1-9B4EFE876DFE}
+	EndGlobalSection
+EndGlobal

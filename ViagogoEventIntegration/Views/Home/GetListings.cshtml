@@ -1,0 +1,30 @@
+﻿@using Microsoft.Practices.ObjectBuilder2
+@model System.Collections.Generic.List<ViagogoEventIntegration.Models.EventListing>
+
+<div class="list-group">
+    <h3>Tickets:</h3>
+    @foreach (var listing in Model)
+    {
+        <div class="list-group-item">
+
+            <span class="listing-ticket-icon glyphicon glyphicon-tags"></span>
+
+
+            Details:
+            <ul>
+                <li>Number of tickets: @listing.NumberOfTickets</li>
+                <li>Pick up available: @( listing.IsPickupAvailable.GetValueOrDefault(false) ? "Yes" : "No")</li>
+                @*<li>Seating: @listing.Seating.Row</li>*@
+                <li>Price: @listing.TicketPrice.Display</li>
+                <li>Estimated total: @(listing.EstimatedTotalCharge?.Display)</li>
+                @if (listing.ListingNotes.Any())
+                {
+                    var notesString = String.Join(",", listing.ListingNotes.Select(n => n.Note).ToArray());
+
+                    <li class="listing-notes">(@notesString)</li>
+                }
+            </ul>
+
+        </div>
+    }
+</div>

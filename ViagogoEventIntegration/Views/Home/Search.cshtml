@@ -1,0 +1,87 @@
+﻿@using ViagogoEventIntegration.Controllers
+@using WebGrease.Css.Extensions
+@using ViagogoEventIntegration.Infrastruture
+@model ViagogoEventIntegration.Models.CategoryInfo
+
+<div class="jumbotron">
+
+    @if (Model == null)
+    {
+
+        <div clas="row">
+            <h3>No events found please search again</h3>
+            @Html.Partial("_SearchForm")
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <h1>@Model.Title</h1>
+            <div class="info-bar">
+                <span class="label label-warning">Until @(Model.MaxEventDate == null ? "" : Model.MaxEventDate.Value.ToString("D"))</span>
+                <span class="label label-success">Tickets from @(Model?.MinTicketPrice?.Display ?? "N/A")</span>
+            </div>
+        </div>
+
+        <div class="row event-copy-image">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                @Html.Raw(Model.Description)
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="event-main-image">
+                    <img src="@Model.MainImage.Href" title="@Model.MainImage.Title" />
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <ul class="list-group">
+                @{
+                    var previousCity = "";
+                    var previousCountry = "";
+                }
+
+                @foreach (var detail in Model.EventDetails.OrderBy(l => l.Venue.Country.Name).ThenBy(l => l.Venue.City))
+                {
+                    var isNewCountry = detail.Venue.Country.Name != previousCountry;
+                    previousCountry = detail.Venue.Country.Name;
+
+
+
+                    var displayCity = detail.Venue.City != previousCity;
+                    previousCity = detail.Venue.City;
+
+                    if (isNewCountry)
+                    {
+
+                    }
+
+                    <li class="list-group-item">
+                        <h3 class="list-group-item-heading @(displayCity || isNewCountry ? "" : "hidden")">
+                            @(isNewCountry ? previousCountry : "")
+                        </h3>
+                        <h4>
+                            @(displayCity ? previousCity : "")
+                        </h4>
+
+                        <span class="event-min-price-label label label-danger @(detail.IsCountryMinPrice && detail.NumberOfEventsInSameCountry > 1 ? "" : "hidden")">Lowest price in @detail.Venue.Country.Name</span>
+
+                        <span class="event-date">@detail.Date.Value.ToString("R")</span>
+                        <div class="list-group-item-text">
+                            <span class="event-venue-name">@(detail?.Venue?.Name ?? "N/A") - <span class="event-venue-price">from @(detail.MinTicketPrice?.Display ?? "N/A")</span></span>
+                        </div>
+                        <p>@Html.Raw(detail.Notes)</p>
+
+                        <span data-event-id="@detail.Id" data-target-element="eventTicketListing-@(detail.Id)" class="event-view-more glyphicon glyphicon-chevron-down"></span>
+                        <div id="eventTicketListing-@(detail.Id)" class="event-tickets-listing hidden">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    }
+</div>
